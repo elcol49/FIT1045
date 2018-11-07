@@ -1,9 +1,11 @@
-num = int(input("please input numbers 5 times"))
+listt = []
 
-L = []
-C = raw_input("press enter to continue")
+count = 0
 
-while C <= 6:
-    L.append(num)
-    print(L)
-    break
+while count < 5:
+    x = int(input("number? "))
+
+    listt.append(x)
+    count += 1
+
+print(listt)
