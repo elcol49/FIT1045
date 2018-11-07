@@ -11,6 +11,7 @@ print(a_list)'''
 # a_list[0] = count whereby it means element in index 0 = count but since it is
 # an empty list, there's no element with index 0. hence, there's an error
 
+#method 1
 a_list = [1, 2, 3, 4, 5]
 
 count = 0
@@ -19,3 +20,15 @@ while count < 5:
     count = count + 1
 
 print(a_list)
+
+
+#method 2
+a_list = [0]*5
+
+count = 0
+while count < 5:
+    a_list[count] = count #replace index number count with int count
+    count += 1
+
+print(a_list)
+
