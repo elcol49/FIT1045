@@ -1,0 +1,37 @@
+'''
+Write a function named getProduct(text) where text is a string showing the product of several positive integers.
+The function must evaluate the expression in text and return the answer. For example, if text = "12*2*10" then 
+getProduct(text) must return 24. You can assume that text is always a valid expression and will not contain 
+any character other than digits and power, floats etc are all invalid. You are NOT allowed to use the built-in
+function split() to write getProduct(text).
+'''
+def getProduct(text):
+    value = ""
+    product = 1
+    for i in range(len(text)):
+        if text[i] == '*':
+            product *= int(value)
+            value = ""
+        else:
+            value += text[i]
+
+    product *= int(value)
+    print(product)
+    return product
+
+'''
+Write a function named evaluate(text) where text is a string showing product and sum of several positive 
+integers. The function must evaluate the expression in text and return the answer. For example, the text 
+"4*2*3*1+2*10+1*2*3" then evaluate(text) must return 50. You are allowed to use the built in split() function 
+for writing evaluate(text). Your function must effectively utilize getProduct(text) function you wrote in the previous part, wherever
+it makes sense to do so
+'''
+def evaluate(text):
+    text = text.split('+')
+    a = 0
+    for item in text:
+        a += getProduct(item)
+    print(a)
+    return a
+
+evaluate("4*2*3*1+2*10+1*2*3")
