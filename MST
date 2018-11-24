@@ -1,0 +1,30 @@
+'''
+Write a function named joinList(aList, separator) where aList is a list and separator is a string. 
+The function must return a string that concatenates all items in aList using the separator between them.
+For example, assume that aList=["apple",7,"mango","orange"]
+joinList(aList,":") must return "apple:7:mango:orange"
+'''
+
+def joinList(alist, separator):
+    string = alist[0]
+    for i in range(1, len(alist)):
+        string += separator + str(alist[i])
+    print(string)
+    return string
+    
+'''
+Write a function named joinTable(table, outer, inner) where table is a list of lists and outer and inner
+are two strings representing two separators. The function must join the table into a string such that the 
+elements within a list are separated by inner and different lists are combined using the separator outer. For
+example, assume that table=[["apple",7],["mango",12],["orange",3]]
+joinTable(table,";","$") must return apple$7;mango$12;orange$3
+'''
+
+def joinTable(table, outer, inner):
+    alist = []
+    for item in table:
+        alist.append(joinList(item, inner))
+    return joinList(alist, outer)
+
+joinTable([['apple',7],['mango',12],['orange',3]], ';', '$')
+
